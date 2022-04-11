@@ -1,16 +1,23 @@
 <template>
   <div class="header">
     <ul class="header-button-left">
-      <li @click="step--">Cancel</li>
+      <li>
+        <router-link to="/"><img src="./assets/logo.png" class="logo" /></router-link>
+      </li>
     </ul>
     <ul class="header-button-right">
       <li v-if="step == 1" @click="step++">Next</li>
       <li v-if="step == 2" @click="publish">발행</li>
     </ul>
-    <img src="./assets/logo.png" class="logo" />
   </div>
   
-  
+  <div>
+  <b-button>Button</b-button>
+  <b-button variant="danger">Button</b-button>
+  <b-button variant="success">Button</b-button>
+  <b-button variant="outline-primary">Button</b-button>
+</div>
+
   <Container :posts="posts" :step="step" :imgurl="imgurl" @write="post_content=$event" />
 
 
